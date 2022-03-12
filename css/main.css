@@ -20,7 +20,6 @@ header p {
     margin: 10px 0px;
 }
 
-
 .buttonGroup {
 display: flex;
 justify-content: space-evenly;
@@ -30,7 +29,7 @@ justify-content: space-evenly;
 color: aqua;
 }
 
-.buttonGroup img {
+.circleButton {
     max-width: 100px;
 }
 
@@ -39,7 +38,15 @@ color: aqua;
 }
 
 #planetSection {
-    background-color: black;
     display: grid;
-    max-width: 1200px;
+    align-items: center;
+    margin: 5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* max-width: 1200px; */
+}
+
+.planetContainer {
+    width: 100px;
+    height: 100px;
+    border: solid black .1em;
 }

@@ -21,18 +21,23 @@ By: Hannah Mary Di Renzo and Evan Hansen
     
     <!-- Ok so for our HTMl we're gonna need two sections: one for the planets, and one for the buttons / instrument holders. -->
     
+    <!-- This is where our instruments live -->
+    <!-- I've made six A tags fitted with an img of a basic circle SVG inside -->
+    <!-- The a will allow us to target the element to drag and drop -->
+    <!-- Wanna figure out how to edit the SVG inside though for cool animation -->
     <section id="buttonSection">
         <h2 class="hidden">Buttons</h2>
         <div class="buttonGroup">
-            <a href="#"><img src="images/basic_circle.svg" alt=""></a>
-            <a href="#"><img src="images/basic_circle.svg" alt=""></a>
-            <a href="#"><img src="images/basic_circle.svg" alt=""></a>
-            <a href="#"><img src="images/basic_circle.svg" alt=""></a>
-            <a href="#"><img src="images/basic_circle.svg" alt=""></a>
-            <a href="#"><img src="images/basic_circle.svg" alt=""></a>
+            <img id="c1" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c2" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c3" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c4" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c5" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c6" class="circleButton" src="images/basic_circle.svg" alt="">
         </div>
     </section>
 
+    <!-- This will be a CSS Grid that we will drag into -->
     <section id="planetSection">
         <h2 class="hidden">Planets</h2>
 
