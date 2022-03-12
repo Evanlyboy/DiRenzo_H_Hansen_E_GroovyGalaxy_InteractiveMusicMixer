@@ -1,0 +1,45 @@
+.hidden {
+    display: none;
+}
+
+/* Header Stuff */
+header {
+    width: 100%;
+    padding: 2em;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 5em;
+    margin: 10px 0px;
+}
+
+header p {
+    font-size: 2em;
+    margin: 10px 0px;
+}
+
+
+.buttonGroup {
+display: flex;
+justify-content: space-evenly;
+}
+
+.buttonGroup a :hover {
+color: aqua;
+}
+
+.buttonGroup img {
+    max-width: 100px;
+}
+
+.buttonGroup img :hover {
+    stroke: aqua;
+}
+
+#planetSection {
+    background-color: black;
+    display: grid;
+    max-width: 1200px;
+}
