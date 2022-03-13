@@ -20,21 +20,34 @@ header p {
     margin: 10px 0px;
 }
 
-.buttonGroup {
-display: flex;
-justify-content: space-evenly;
+
+#buttonSection {
+
 }
 
-.buttonGroup a :hover {
-color: aqua;
+.buttonGroup {
+    display: flex;
+    flex: 0 0 350px;
+    flex-wrap: wrap;
+    row-gap: 5em;
+    justify-content: center;
 }
 
 .circleButton {
     max-width: 350px;
 }
 
-.buttonGroup img :hover {
-    stroke: aqua;
+@media screen and (max-width: 600px) {
+
+    .buttonGroup {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        }
+        
+    .circleButton {
+            width: 50%;
+        }
 }
 
 #planetSection {
