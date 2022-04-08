@@ -1,3 +1,16 @@
 body {
-    background-image:url("images/image_background.jpg") ;
+    background-color: rgb(46, 45, 48);
+}
+footer {
+    background-image: url("images/image_footer.jpg");
+}
+.logo {
+    margin-left: 520px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: wrap
+    ;
+    margin-left: 150px;
+   
 }
