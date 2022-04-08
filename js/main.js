@@ -18,9 +18,11 @@
 // Drag and Drop Variables
 const draggableButtons = document.querySelectorAll(".buttonGroup *"),
       buttonList = document.querySelector(".buttonGroup"),
+      audioBox = document.querySelector(".audioBox"),
+      audioHell = document.querySelector(".audioHell"),
       dropZones = document.querySelectorAll(".planetContainer"),
       container = document.querySelectorAll("#planetSection *");
-
+      
 // Audio handling variables
 const theAudio = document.querySelector("audio[id]"),
       trackButtons = document.querySelectorAll(".track-ref");
