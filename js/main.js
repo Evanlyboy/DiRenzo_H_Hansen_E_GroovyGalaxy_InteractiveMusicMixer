@@ -110,17 +110,16 @@ const pauseBox = document.querySelector("#paused"),
         } else if (scrapedID === "c4") {
             snare.play();
             console.log("snare playing");
-        } else if (scrapedID === "c2") {
+        } else if (scrapedID === "c5") {
             elec.play();
             console.log("elec playing");
-        } else if (scrapedID === "c2") {
+        } else if (scrapedID === "c6") {
             hihat.play();
             console.log("hihat playing");
-        } else if (scrapedID === "c2") {
+        } else if (scrapedID === "c7") {
             moog.play();
             console.log("moog playing");
         }
-
 
         // instAudio.play();
         // instAudio.loop = true;
@@ -135,6 +134,15 @@ const pauseBox = document.querySelector("#paused"),
 
         // check if there are elements in the playing div, then pause their players and move them back
         // moves the image but not the audio
+
+        acoustic.pause();
+        ambi.pause();
+        kick.pause();
+        snare.pause();
+        elec.pause();
+        hihat.pause();
+        moog.pause();
+
 
         if (playBox.getChildElementCount > 0) {
             let i = 1;
