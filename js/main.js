@@ -15,17 +15,28 @@
 // 3 - Playback with media controls
 // 4 - Resetting playback to 0
 
+
 // Drag and Drop Variables
 const draggableButtons = document.querySelectorAll(".buttonGroup *"),
       buttonList = document.querySelector(".buttonGroup"),
       dropZones = document.querySelectorAll(".planetContainer"),
       container = document.querySelectorAll("#planetSection *");
 
-// Audio handling variables
-const theAudio = document.querySelector("audio[id]"),
-      trackButtons = document.querySelectorAll(".track-ref");
+      // so fucking done. i can't figure this shit out. caveman mode it is. time to dumb down everything
+      acoustic = document.querySelector("#c1-audio");
+      ambi = document.querySelector("#c2-audio");
+      kick = document.querySelector("#c3-audio");
+      snare = document.querySelector("#c4-audio");
+      elec = document.querySelector("#c5-audio");
+      hihat = document.querySelector("#c6-audio");
+      moog = document.querySelector("#c7-audio");
 
-let instAudioCount = [];
+
+// Audio handling variables
+const pauseBox = document.querySelector("#paused"),
+      playBox = document.querySelector("#playing")
+
+// this needs major reworking
 
     //Drag and Drop Functions
     // -----------------------------------------------------------------
@@ -58,7 +69,7 @@ let instAudioCount = [];
 		 	this.appendChild(document.querySelector(`#${scrapedID}`));
 
             //  pass the scraped ID into the playInst function
-             instArray(scrapedID);
+             changePic(scrapedID);
 		 }
 		 else {
 		 	console.log(this.childElementCount);
@@ -68,29 +79,51 @@ let instAudioCount = [];
 
 
     //Audio functions
-    function instArray (scrapedID) {
+    function changePic (scrapedID) {
         // make a new variable based off the passed-in ID and add "-audio" to it
         let currentAudio = scrapedID + "-audio";
-        console.log(`the chosen instrument:`, currentAudio);
         // make a new variable that gets the audio from the HTML and adds our currentAudio variable to it to make a complete choice
-        let instAudio = (document.querySelector(`audio[id=${currentAudio}]`));
+        let audioMove = document.querySelector(`#${currentAudio}`);
+        playBox.appendChild(audioMove);
         // 
-        instAudioCount.push(currentAudio);
+        // instAudioCount.push(currentAudio);
         // instAudio.push(currentAudio);
 
-        console.log("currently playing audio", instAudio);
-        console.log("what is playing", instAudioCount);
+        // console.log("currently playing audio", instAudio);
+        // console.log("what is playing", instAudioCount);
 
-        playInst(instAudio);
+        playInst(audioMove, scrapedID);
     }
 
-   
-    function playInst(instAudio) { 
+    function playInst(yesAudio, scrapedID) { 
 
-        instAudio.play();
-        instAudio.loop = true;
+        // caveman mode
+        if (scrapedID === "c1") {
+            acoustic.play();
+            console.log("acoustic playing");
+        } else if (scrapedID === "c2") {
+            ambi.play();
+            console.log("ambi playing");
+        } else if (scrapedID === "c3") {
+            kick.play();
+            console.log("kick playing");
+        } else if (scrapedID === "c4") {
+            snare.play();
+            console.log("snare playing");
+        } else if (scrapedID === "c5") {
+            elec.play();
+            console.log("elec playing");
+        } else if (scrapedID === "c6") {
+            hihat.play();
+            console.log("hihat playing");
+        } else if (scrapedID === "c7") {
+            moog.play();
+            console.log("moog playing");
+        }
 
-        console.log(`current tracks playing: `, instAudio);
+        // instAudio.play();
+        // instAudio.loop = true;
+
     }
 
     function reset() {
@@ -98,17 +131,39 @@ let instAudioCount = [];
         // put children back where they came from
         console.log("the drop zones: ", dropZones);
         console.log("the draggable buttons: ", draggableButtons);
+
+        // check if there are elements in the playing div, then pause their players and move them back
         // moves the image but not the audio
+
+        acoustic.pause();
+        ambi.pause();
+        kick.pause();
+        snare.pause();
+        elec.pause();
+        hihat.pause();
+        moog.pause();
+
+
+        if (playBox.getChildElementCount > 0) {
+            let i = 1;
+            while (i < 8) {
+                let loopAudio = document.getElementById(`c${i}-audio`);
+                loopAudio.pause();
+                if (playBox.firstChild === loopAudio)
+                pauseBox.appendChild(loopAudio)
+                i++;
+            }
+        }
+
 		dropZones.forEach(zone => {
 			if(zone.childElementCount > 0) {
-                // let bastardAudio = zone.getElementbyID;
-                // debugger;
-                // bastardAudio.stop();
                 console.log("first element child: ", buttonList.firstElementChild);
 				buttonList.appendChild(zone.firstElementChild);
 			}
 		})
         // stops the audio
+        // console.log(instAudioCount);
+        // instAudio.pause();
     }
 
     function rewindInst() {
