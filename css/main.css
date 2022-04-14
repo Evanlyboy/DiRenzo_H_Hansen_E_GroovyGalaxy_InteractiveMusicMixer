@@ -2,6 +2,10 @@
     display: none;
 }
 
+body {
+    background-image: url('../images/image_background.jpg');
+}
+
 /* Header Stuff */
 header {
     width: 100%;
@@ -20,9 +24,9 @@ header p {
     margin: 10px 0px;
 }
 
-
-#buttonSection {
-
+.hero_image {
+    height: 300px;
+    width: 300px;
 }
 
 .buttonGroup {
@@ -34,7 +38,8 @@ header p {
 }
 
 .circleButton {
-    max-width: 350px;
+    max-width: 200px;
+    margin: 0em 1em;
 }
 
 @media screen and (max-width: 600px) {
@@ -51,18 +56,28 @@ header p {
 }
 
 #planetSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5em;
+
+}
+
+/* #planetSection {
     display: grid;
     align-items: center;
     margin: 5em;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     /* max-width: 1200px; */
-}
 
 .planetContainer {
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: solid black .1em;
+    border-radius: 1em;
+
+    margin: 0em 5em;
 }
