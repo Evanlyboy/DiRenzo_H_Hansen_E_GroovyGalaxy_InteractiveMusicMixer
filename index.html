@@ -1,3 +1,8 @@
+<!-- Groovy Galaxy Music Mixer
+An interactive music mixer made with HTML, CSS, and JS
+By: Hannah Mary Di Renzo and Evan Hansen
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,26 +12,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <title>Groovy Galaxy</title>
 </head>
 
 <body>
-    <header class="logo">
-        <img src="images/image_logo.svg" alt="logo" width="390px" height="380px">
+    <header>
+        <h1>Groovy Galaxy Music Mixer</h1>
+        <p>Drag and drop musical melodies onto planets for a far-out groove!</p>
     </header>
-    <section>
-        <div class="flex-container">
-            <div> <img src="images/image_bass.svg" alt="bass" width="150px" height="400px"> </div>
-            <div><img src="images/image_bongo.svg" alt="bongo" width="250px" height="250px"></div>
-            <div><img src="images/image_drum.svg" alt="drum" width="200px" height="180px"></div>
-            <div><img src="images/image_guitar.svg" alt="guitar" width="200px" height="200px"></div>
-            <div><img src="images/image_sitar.svg" alt="sitar" width="150px" height="500px"></div>
-            <div><img src="images/image_synth.svg" alt="synth" width="300px" height="250px"></div>
+    
+    <!-- Ok so for our HTMl we're gonna need two sections: one for the planets, and one for the buttons / instrument holders. -->
+    
+    <!-- Load in all the audio we need -->
+    <audio id="c1-audio" class="hidden" src="audio/Acoustic_Guitar.mp3" controls></audio>
+    <audio id="c2-audio" class="hidden" src="audio/Ambient_Synth.mp3" controls></audio>
+    <audio id="c3-audio" class="hidden" src="audio/DMXKick02.mp3" controls></audio>
+    <audio id="c4-audio" class="hidden" src="audio/DMXSnare02.mp3" controls></audio>
+    <audio id="c5-audio" class="hidden" src="audio/Electric_Guitar_Distortion.mp3" controls></audio>
+    <audio id="c6-audio" class="hidden" src="audio/HiHat.mp3" controls></audio>
+    <audio id="c7-audio" class="hidden" src="audio/Moog_Bass.mp3" controls></audio>
+
+    <!-- This is where our instruments live -->
+    <!-- The a will allow us to target the element to drag and drop -->
+    <!-- Wanna figure out how to edit the SVG inside though for cool animation -->
+    <section id="buttonSection">
+        <h2 class="hidden">Buttons</h2>
+        <div class="buttonGroup">
+            <img id="c1" class="circleButton" src="images/gitar.svg" alt="">
+            <img id="c2" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c3" class="circleButton" src="images/drum.svg" alt="">
+            <img id="c4" class="circleButton" src="images/bongo.svg" alt="">
+            <img id="c5" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c6" class="circleButton" src="images/basic_circle.svg" alt="">
+            <img id="c7" class="circleButton" src="images/bass.svg" alt="">
+            <img id="c8" class="circleButton" src="images/basic_circle.svg" alt="">
+        </div>
     </section>
-    <footer>
 
-    </footer>
+    <!-- This will be a CSS Grid that we will drag into -->
+    <section id="planetSection">
+        <h2 class="hidden">Planets</h2>
 
+        <!-- planet 1 -->
+        <div class="planetContainer p1">        
+        </div>
+
+        <!-- planet 2 -->
+        <div class="planetContainer p2">            
+        </div>
+
+        <!-- planet 3 -->
+        <div class="planetContainer p3">            
+        </div>
+
+        <!-- planet 4 -->
+        <div class="planetContainer p4">            
+        </div>
+
+        <!-- planet 5 -->
+        <div class="planetContainer p5">            
+        </div>
+
+        <!-- planet 6 -->
+        <div class="planetContainer p6"> 
+        </div>
+
+    </section>
+            <!-- Content goes here -->
+    <!-- JS Goes at the bottom of body -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
